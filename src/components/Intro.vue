@@ -1,7 +1,7 @@
 <template>
     <section class="Intro">
         <h1>Duas metades se completam</h1>
-        <p>Para curtir com os amigos e com a família, Aperol Spritz é perfeito para momentos leves e descomplicados.</p>
+        <p class="descriptionText">Para curtir com os amigos e com a família, Aperol Spritz é perfeito para momentos leves e descomplicados.</p>
         
         <div class="intro__content">
             <iframe 
@@ -38,14 +38,6 @@ export default{
 </script>
 
 <style scoped>
-.Intro p{
-    width: 50%;
-    margin: var(--margin-H-main);
-    font-size: 1.1rem;
-    font-weight: 200;
-    color: var(--color-font-grey);
-    line-height: 1.8rem;
-}
 
 .intro__content{
     display: flex;

@@ -97,6 +97,7 @@ export default {
     font-size: 1.3rem;
     font-weight: bold;
     margin-right: 1vw;
+    color: var(--color-brand-main)
 }
 
 .productCard__info-button {

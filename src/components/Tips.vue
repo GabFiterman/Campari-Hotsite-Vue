@@ -1,18 +1,24 @@
 <template>
 <section class="Tips">
-    <h1>Tips</h1>
-    <br />
-    <h2>Para acompanhar seu drink</h2>
-    <p>Carousel</p>
+    <h1>Para acompanhar seu drink</h1>
+    <Carousel :carouselImgs="carouselImgs"/>
+
 </section>
 </template>
 
 <script>
+import Carousel from './Carousel.vue';
 export default{
-    name: 'Tips'
+    name: "Tips",
+    props: {
+        carouselImgs: Array
+    },
+    components: { Carousel }
 }
 </script>
 
 <style scoped>
-
+.Tips h1{
+    margin: var(--margin-H-main);
+}
 </style>
