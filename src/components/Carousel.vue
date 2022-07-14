@@ -1,6 +1,7 @@
 <template>
+    <!-- TODO: add animation to slider -->
     <div v-show="images" class="Carousel">
-        <p @click="changeImage('previous')" class="Carousel__Controler Carousel__Controler-previous" >&lt;</p>
+        <p @click="changeImage('previous')" class="Carousel__Controler Carousel__Controler-previous">&lt;</p>
         <img :src="imageActualRendered" />
         <p @click="changeImage('next')" class="Carousel__Controler Carousel__Controler-next">></p>
     </div>
@@ -53,32 +54,35 @@ export default {
 </script>
 
 <style scoped>
-.Carousel{
+.Carousel {
     display: flex;
     align-items: center;
 }
+
 .Carousel img {
-    width: 110%;
+    width: 100%;
+    border-radius: 1rem;
+
 }
 
-.Carousel__Controler{
+.Carousel__Controler {
     z-index: 1;
-    font-size: 4rem;    
+    font-size: 4rem;
     text-shadow: 0px 0px 6px #000;
     color: white;
     transition: all 0.5s;
 }
 
-.Carousel__Controler:hover{
+.Carousel__Controler:hover {
     transform: scale(1.25);
     cursor: pointer;
 }
 
-.Carousel__Controler-previous{
+.Carousel__Controler-previous {
     margin-right: -4rem;
 }
 
-.Carousel__Controler-next{
+.Carousel__Controler-next {
     margin-left: -4rem;
 }
 </style>

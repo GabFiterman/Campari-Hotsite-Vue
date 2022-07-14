@@ -33,15 +33,7 @@ export default {
 </script>
 
 <style scoped>
-.horizontal-divider {
-    border-top: var(--border-main);
-    width: 100%;
-}
 
-.vertical-divider {
-    border-left: var(--border-main);
-    min-height: 3rem;
-}
 
 .productCard {
     display: flex;

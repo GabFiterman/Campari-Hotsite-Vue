@@ -6,7 +6,16 @@
   <div>
     <router-view />
   </div>
+  <Footer />
 </template>
+
+<script>
+import Footer from './components/Footer.vue'
+export default{
+  name: 'App',
+  components: {Footer}
+}
+</script>
 
 <style>
 @import './assets/_reset.css';
@@ -59,5 +68,15 @@ button {
 button:hover {
   cursor: pointer;
   filter: brightness(1.5);
+}
+
+.horizontal-divider {
+    border-top: var(--border-main);
+    width: 100%;
+}
+
+.vertical-divider {
+    border-left: var(--border-main);
+    min-height: 3rem;
 }
 </style>
