@@ -6,20 +6,20 @@
         <div class="introContent">
             <iframe 
                 class="introVideo"
-                src="https://www.youtube.com/embed/Kz6WnrHOuv0" 
+                :src="videoURL" 
                 title="YouTube video player" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
-            <ProductShow :products-list="productsList" :tags="tag" />
+            <ProductShow :tags="tag" />
         </div>
-
     </section>
 </template>
 
 <script>
 import ProductShow from './ProductShow.vue';
+
 export default{
     name: 'Intro',
     data(){
@@ -28,23 +28,11 @@ export default{
             tag: 'highlight'
         }
     },
-    components:{
-        ProductShow
-    },
     props: {
-        productsList: Array,
         introVideo: String
     },
-    methods: {
-        processaUrl(){
-            this.videoURL = this.introVideo;
-        }
-    },
-    mounted(){
-        this.processaUrl();
-    },
-    beforeUpdate(){
-        this.processaUrl();
+    components:{
+        ProductShow
     }
 }
 </script>

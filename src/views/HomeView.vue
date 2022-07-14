@@ -1,21 +1,23 @@
 <template>
     <div class="home">
         <img :src="heroBanner" alt="Hero banner" class="heroBanner" />
+
         <main class="homeMain">
-            <section class="introArea">
-                <Intro v-if="productsList" :productsList="productsList" :introVideo="introVideo"/>
-            </section>
-            <section class="classicArea">
-                <Classics v-if="productsList" :productsList="productsList" />
-            </section>
+            <Intro class="introArea" :introVideo="introVideo" />
+            <Tips class="tipsArea" />
+            <Classics class="classicArea" />
+            <Offers class="offersArea" />
         </main>
-        
+
     </div>
 </template>
 
 <script>
 import Classics from '../components/Classics.vue';
 import Intro from '../components/Intro.vue';
+import Tips from '../components/Tips.vue'
+import Offers from '../components/Offers.vue';
+
 export default {
     name: "HomeView",
     data() {
@@ -39,42 +41,50 @@ export default {
             // console.log('Consegui este asset: ');
             // console.log(asset[0].url)
             return asset[0].url;
-        },
-        async getProducts() {
-            const req = await fetch("http://localhost:3000/products");
-            const dataProducts = await req.json();
-            this.productsList = dataProducts;
         }
     },
     mounted() {
         this.getAssets();
-        this.getProducts();
     },
-    components:{
-      Classics,
-      Intro
+    beforeUpdate() {
+        this.getAssets();
+    },
+    components: {
+        Intro,
+        Classics,
+        Tips,
+        Offers
     }
 }
 </script>
 
 
 <style>
-
 .heroBanner {
     width: 100%;
 }
 
-.homeMain{
-}
-
-.introArea{
+.introArea {
     margin: 0;
 }
-.classicArea{
+
+.tipsArea {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 6rem;
+    margin: 4rem;
+}
+
+.classicArea {
     margin: 0;
     background-color: var(--color-highlight-grey);
     border: 1px solid #041e4230;
     border-radius: 1rem;
     padding-bottom: 2rem;
+}
+
+.offersArea {
+    /* margin: 2rem  */
 }
 </style>

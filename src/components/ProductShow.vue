@@ -24,8 +24,10 @@ export default {
         tags: String
     },
     methods: {
-        getProducts() {
-            this.products = this.productsList;
+        async getProducts() {
+            const req = await fetch("http://localhost:3000/products");
+            const dataProducts = await req.json();
+            this.products = dataProducts;
             this.attachProducts();
         },
         attachProducts() {
@@ -59,9 +61,6 @@ export default {
         }
     },
     mounted() {
-        this.getProducts();
-    },
-    beforeUpdate() {
         this.getProducts();
     },
     components: {
