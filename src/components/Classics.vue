@@ -1,13 +1,11 @@
 <template>
-    <section>
-        <div class="classicsTitle">
+    <section class="Classics">
+        <div class="classics__text">
             <h1>Para aproveitar um clássico: Negroni</h1>
             <p>30ml de Campari | 30ml de Gin | 30ml de Vermute Doce | Coloque todos os ingredientes diretamente em copo
                 baixo cheio de gelo. </p>
         </div>
-        <div class="classicsProducts">
-            <ProductShow :tags="tag" />
-        </div>
+        <ProductShow :tags="tag" />
     </section>
 </template>
 
@@ -25,22 +23,19 @@ export default {
 </script>
 
 <style scoped>
-.classicsTitle {
-    margin: 0 8%;
-    padding: 2rem 0;
+.Classics {
+    background-color: var(--color-highlight-grey);
+    border: var(--border-main);
+    border-radius: 1rem;
+    margin: var(--margin-H2-main);
 }
 
-.classicsTitle h1 {
-    margin-bottom: 4vh;
+.classics__text h1 {
+    margin: var(--margin-H-main);
 }
 
-.classicsTitle p {
-    color: var(--color-font-grey)
+.classics__text p {
+    color: var(--color-font-grey);
+    margin: var(--margin-H-main);
 }
-
-.classicsProducts {
-    margin: 4vh 6vw 0 6vw;
-}
-
-section {}
 </style>

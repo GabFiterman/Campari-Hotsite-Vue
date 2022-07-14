@@ -1,20 +1,19 @@
 <template>
-    <section>
-        <div class="productCard">
-            <img :src="productImage" />
-            <div id="productInfo">
-                <h2 v-if="productSize">{{ productName }} {{ productSize }}mL {{ productLastName }}</h2>
-                <h2 v-else>{{ productName }} {{ productLastName }}</h2>
-                <div class="horizontal-divider"></div>
-                <div class="productContoller">
-                    <div class="productPrice">
-                        <span>A partir de</span>
-                        <p>R$ {{ productPrice }}</p>
-                    </div>
-                    <div class="vertical-divider"></div>
-                    <button class="btnCard">Ver ofertas</button>
-                </div>
+    <section class="productCard">
+        <img :src="productImage" />
+        <div class="productCard__name">
+            <h2 v-if="productSize">{{ productName }} {{ productSize }}mL {{ productLastName }}</h2>
+            <h2 v-else>{{ productName }} {{ productLastName }}</h2>
+        </div>
+
+        <div class="horizontal-divider"></div>
+        <div class="productCard__info">
+            <div class="productCard__info-price">
+                <span>A partir de</span>
+                <p>R$ {{ productPrice }}</p>
             </div>
+            <div class="vertical-divider"></div>
+            <button class="productCard__info-button">Ver ofertas</button>
         </div>
     </section>
 </template>
@@ -35,27 +34,27 @@ export default {
 
 <style scoped>
 .horizontal-divider {
-    border-top: solid 1px var(--color-light-grey);
+    border-top: var(--border-main);
     width: 100%;
 }
 
 .vertical-divider {
-    border-left: solid 1px var(--color-light-grey);
+    border-left: var(--border-main);
     min-height: 3rem;
 }
 
-/* TODO: Finalizar CSS do card de produto enquanto há apenas 1 produto */
 .productCard {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    background-color: white;
-    width: 18vw;
-    height: 60vh;
-    padding: 1rem;
-    border: solid 1px var(--color-light-grey);
+    background-color: var(--color-background);
+    padding: 1vh 1.5vw;
+    height: 52vh;
+    width: 16vw;
+    border: var(--border-main);
     transition: all 1s;
+    margin: 2vh 0;
 }
 
 .productCard:hover {
@@ -64,9 +63,9 @@ export default {
 }
 
 .productCard img {
-    /* width: 10rem; */
-    height: 35vh;
-    margin-bottom: 2rem;
+    height: 32vh;
+    width: auto;
+    margin-bottom: 1.6vh;
     transition: all 1s;
 }
 
@@ -74,25 +73,33 @@ export default {
     transform: scale(1.05);
 }
 
-.productCard h2 {
-    font-size: 1.1rem;
-    font-weight: 350;
-    margin-bottom: 1.5rem;
+.productCard__name {
+    height: 3rem;
 }
 
-.productContoller {
+.productCard h2 {
+    font-size: 1rem;
+    font-weight: 350;
+    margin-bottom: 1.8vh;
+}
+
+.productCard__info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
+    align-items: flex-end;
 }
 
-.productPrice span {
+.productCard__info-price span {
     font-size: 0.75rem;
 }
 
-.productPrice p {
+.productCard__info-price p {
     font-size: 1.3rem;
     font-weight: bold;
+    margin-right: 1vw;
+}
+
+.productCard__info-button {
+    margin-left: 1vw;
 }
 </style>

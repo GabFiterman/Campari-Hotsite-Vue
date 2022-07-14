@@ -1,8 +1,13 @@
 <template>
-    <section v-if="products" class="productShow">
-        <div class="productCard" v-for="(product, index) in products" :key="index">
-            <ProductCard :product-image="product.image" :product-name="product.name" :product-size="product.size"
-                :product-last-name="product.lastName" :product-price="product.price" />
+    <section v-if="products" class="ProductShow">
+        <div v-for="(product, index) in products" :key="index">
+            <ProductCard 
+                :product-image="product.image" 
+                :product-name="product.name" 
+                :product-size="product.size"
+                :product-last-name="product.lastName" 
+                :product-price="product.price" 
+            />
         </div>
     </section>
 </template>
@@ -70,7 +75,7 @@ export default {
 </script>
 
 <style scoped>
-.productShow {
+.ProductShow {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

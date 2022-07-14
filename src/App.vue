@@ -9,26 +9,43 @@
 </template>
 
 <style>
-@import './assets/_reset.css'; 
-:root{
+@import './assets/_reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+  --color-font-main: #2c3e50;
   --color-font-grey: #87888c;
   --color-light-grey: #dfe4f2;
   --color-highlight-grey: #F3F3F3;
   --color-brand-main: #041E42;
-  --color-font-main: #2c3e50;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--color-font-main);
-}
-h1{
-  font-size: 1.8rem;
-  font-weight: bold;
+  --color-background: #fff;
+
+  --padding-section: 6vh 8vw;
+  --margin-H-main: 4vh 0;
+  --margin-H2-main: 8vh 0;
+
+  --border-main: solid 1px var(--color-light-grey);
+
+  --font-family: 'Open Sans', sans-serif;
 }
 
-button{
+#app {
+  font-family: var(--font-family);
+  color: var(--color-font-grey);
+  background-color: var(--color-background);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-font-main);
+}
+
+button {
   background-color: var(--color-brand-main);
   color: var(--color-light-grey);
   padding: 0.55rem 0.75rem;
@@ -39,7 +56,7 @@ button{
   transition: all 0.5s;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
   filter: brightness(1.5);
 }

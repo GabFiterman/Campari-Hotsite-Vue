@@ -23,4 +23,7 @@ export default {
 </script>
 
 <style scoped>
+.Offers h1{
+    margin: var(--margin-H-main);
+}
 </style>

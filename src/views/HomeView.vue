@@ -1,20 +1,21 @@
 <template>
-    <div class="home">
-        <img :src="heroBanner" alt="Hero banner" class="heroBanner" />
+    <div>
+        <Hero :heroBanner="heroBanner" />
 
-        <main class="homeMain">
-            <Intro class="introArea" :introVideo="introVideo" />
-            <Tips class="tipsArea" />
-            <Classics class="classicArea" />
-            <Offers class="offersArea" />
+        <main>
+            <Intro class="section" :introVideo="introVideo" />
+            <Tips class="section tipsArea" />
+            <Classics class="section" />
+            <Offers class="section" />
         </main>
 
     </div>
 </template>
 
 <script>
-import Classics from '../components/Classics.vue';
+import Hero from '../components/Hero.vue';
 import Intro from '../components/Intro.vue';
+import Classics from '../components/Classics.vue';
 import Tips from '../components/Tips.vue'
 import Offers from '../components/Offers.vue';
 
@@ -38,8 +39,6 @@ export default {
             let asset = dataAssets.filter((e) => {
                 return e.name == assetName;
             });
-            // console.log('Consegui este asset: ');
-            // console.log(asset[0].url)
             return asset[0].url;
         }
     },
@@ -50,6 +49,7 @@ export default {
         this.getAssets();
     },
     components: {
+        Hero,
         Intro,
         Classics,
         Tips,
@@ -60,31 +60,13 @@ export default {
 
 
 <style>
-.heroBanner {
-    width: 100%;
-}
-
-.introArea {
-    margin: 0;
+.section {
+    padding: var(--padding-section);
 }
 
 .tipsArea {
     text-align: center;
     background-color: black;
     color: white;
-    padding: 6rem;
-    margin: 4rem;
-}
-
-.classicArea {
-    margin: 0;
-    background-color: var(--color-highlight-grey);
-    border: 1px solid #041e4230;
-    border-radius: 1rem;
-    padding-bottom: 2rem;
-}
-
-.offersArea {
-    /* margin: 2rem  */
 }
 </style>

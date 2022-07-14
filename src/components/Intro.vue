@@ -3,9 +3,9 @@
         <h1>Duas metades se completam</h1>
         <p>Para curtir com os amigos e com a família, Aperol Spritz é perfeito para momentos leves e descomplicados.</p>
         
-        <div class="introContent">
+        <div class="intro__content">
             <iframe 
-                class="introVideo"
+                class="intro__video"
                 :src="videoURL" 
                 title="YouTube video player" 
                 frameborder="0" 
@@ -38,25 +38,23 @@ export default{
 </script>
 
 <style scoped>
-.Intro{
-    margin: 4% 8%;
-}
 .Intro p{
     width: 50%;
-    margin-top: 1.2rem;
+    margin: var(--margin-H-main);
     font-size: 1.1rem;
-    font-weight: 100;
+    font-weight: 200;
     color: var(--color-font-grey);
     line-height: 1.8rem;
 }
 
-.introContent{
+.intro__content{
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
+    align-items: center;
+    margin: var(--margin-H-main);
 }
 
-.introVideo{
+.intro__video{
     width: 60%;
     height: 60vh;
 }
