@@ -52,7 +52,7 @@ export default {
     align-items: center;
     background-color: white;
     width: 18vw;
-    min-height: 50vh;
+    height: 60vh;
     padding: 1rem;
     border: solid 1px var(--color-light-grey);
     transition: all 1s;

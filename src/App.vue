@@ -13,13 +13,15 @@
 :root{
   --color-font-grey: #87888c;
   --color-light-grey: #dfe4f2;
+  --color-highlight-grey: #F3F3F3;
   --color-brand-main: #041E42;
+  --color-font-main: #2c3e50;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: var(--color-font-main);
 }
 h1{
   font-size: 1.8rem;
