@@ -7,6 +7,8 @@
                 :product-size="product.size"
                 :product-last-name="product.lastName" 
                 :product-price="product.price" 
+                :product-id="product.id"
+                :product-slug="product.slug"
             />
         </div>
     </section>

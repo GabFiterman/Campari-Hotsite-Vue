@@ -5,7 +5,6 @@
             <h2 v-if="productSize">{{ productName }} {{ productSize }}mL {{ productLastName }}</h2>
             <h2 v-else>{{ productName }} {{ productLastName }}</h2>
         </div>
-
         <div class="horizontal-divider"></div>
         <div class="productCard__info">
             <div class="productCard__info-price">
@@ -13,7 +12,20 @@
                 <p>R$ {{ productPrice }}</p>
             </div>
             <div class="vertical-divider"></div>
-            <button class="productCard__info-button">Ver ofertas</button>
+            <button class="productCard__info-button">
+            <router-link
+                :to="{
+                    name: 'ProductPage',
+                    params: {
+                        id: productId,
+                        slug: productSlug,
+                        productName: productName
+                    }
+                }"
+            >
+            Ver ofertas
+            </router-link>
+            </button>
         </div>
     </section>
 </template>
@@ -27,14 +39,14 @@ export default {
         productImage: String,
         productSize: String,
         productLastName: String,
-        productPrice: String
+        productPrice: String,
+        productId: String,
+        productSlug: String
     }
 }
 </script>
 
 <style scoped>
-
-
 .productCard {
     display: flex;
     flex-direction: column;

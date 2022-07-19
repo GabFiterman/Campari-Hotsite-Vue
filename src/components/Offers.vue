@@ -15,9 +15,6 @@ export default {
             tag: 'offer'
         }
     },
-    props: {
-        productsList: Array
-    },
     components: { ProductShow }
 }
 </script>

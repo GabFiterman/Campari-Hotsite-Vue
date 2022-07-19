@@ -4,6 +4,7 @@
             "ean": "7891136057012",
             "name": "Aperitivo Aperol",
             "lastName": "Spritz",
+            "slug": "aperitivo-aperol",
             "size": 750,
             "image": "https://i.imgur.com/DtS2Bgy.jpg",
             "price": 54.23,
@@ -20,6 +21,7 @@
             "name": "Cinzano Pro Spritz",
             "ean": "8000020107057",
             "lastName": "",
+            "slug": "cizano-pro-spritz",
             "size": 750,
             "image": "https://i.imgur.com/8yll07A.jpg",
             "price": 48.50,
@@ -36,6 +38,7 @@
             "ean": "7891136057005",
             "name": "Combo Aperol",
             "lastName": "Spitz",
+            "slug": "combo-aperol",
             "size": "",
             "image": "https://i.imgur.com/sgzX5On.jpg",
             "price": 106.80,
@@ -52,6 +55,7 @@
             "ean": "7891136051003",
             "name": "Bitter Negroni Campari",
             "lastName": "",
+            "slug": "bitter-negroni-campari",
             "size": 500,
             "image": "https://i.imgur.com/IdsY7PX.jpg",
             "price": 134,
@@ -68,6 +72,7 @@
             "ean": "7891136051003",
             "name": "Bitter Campari",
             "lastName": "",
+            "slug": "bitter-campari",
             "size": 900,
             "image": "https://i.imgur.com/tvC8ObR.jpg",
             "price": 48.51,
@@ -84,6 +89,7 @@
             "ean": "7891136058019",
             "name": "Vermute Cinzano Rosso",
             "lastName": "",
+            "slug": "vermute-cizano-rosso",
             "size": 1000,
             "image": "https://i.imgur.com/cTsy62f.jpg",
             "price": 32.68,
@@ -96,10 +102,11 @@
             }
         },
         {
-            "id": 6,
+            "id": 7,
             "ean": "897076002003",
             "name": "Gin London Dry Bulldog",
             "lastName": "",
+            "slug": "gin-london-dry-bulldog",
             "size": 750,
             "image": "https://i.imgur.com/Zub5NYx.jpg",
             "price": 149.90,
@@ -112,10 +119,11 @@
             }
         },
         {
-            "id": 7,
+            "id": 8,
             "ean": "721059841009",
             "name": "Whisky Wild Turkey Original",
             "lastName": "",
+            "slug": "whisky-wild-turkey-original",
             "size": 1000,
             "image": "https://i.imgur.com/irt4HD6.jpg",
             "price": 194.90,
@@ -124,6 +132,23 @@
                 "highlight": false,
                 "classic": false,
                 "offer": true,
+                "combo": false
+            }
+        },
+        {
+            "id": 9,
+            "ean": "9999999999",
+            "name": "PRODUTO TESTE",
+            "lastName": "",
+            "slug": "produto-teste",
+            "size": 1000,
+            "image": "https://i.imgur.com/irt4HD6.jpg",
+            "price": 999.99,
+            "description": "Mussum Ipsum, cacilds vidis litro abertis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris.Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Mé faiz elementum girarzis, nisi eros vermeio.",
+            "tags": {
+                "highlight": false,
+                "classic": false,
+                "offer": false,
                 "combo": false
             }
         }

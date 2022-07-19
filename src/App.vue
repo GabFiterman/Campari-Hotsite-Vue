@@ -1,10 +1,11 @@
 <template>
-  <!-- <nav>
-    <router-link to="/">Home</router-link> |
+  <!-- <nav class="navBar">
+    <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
+    <router-link to="/product-demo">Product Page</router-link>
   </nav> -->
   <div>
-    <router-view />
+    <router-view :key="$route.path"/>
   </div>
   <Footer />
 </template>
@@ -46,6 +47,34 @@ export default{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+}
+
+.active-link{
+  color: #041E42;
+  background-color: rgba(255,255,255,0.6);
+}
+
+.navBar{
+  background-color: #041E42;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.navBar a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin: 0 4rem;
+  border-bottom: 2px solid aqua;
+  padding: 2rem 1rem;
+  transition: all 0.5s;
+}
+
+.navBar a:hover{
+  color: aqua;
+  border-bottom: 2px solid white;
+  background-color: rgba(255,255,255, 0.25);
 }
 
 h1 {
