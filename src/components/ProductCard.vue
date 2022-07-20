@@ -63,7 +63,7 @@ export default {
 
 .productCard:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-box-main);
 }
 
 .productCard img {

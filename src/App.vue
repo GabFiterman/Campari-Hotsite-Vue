@@ -37,6 +37,8 @@ export default{
   --border-main: solid 1px var(--color-light-grey);
 
   --font-family: 'Open Sans', sans-serif;
+
+  --shadow-box-main: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
 }
 
 #app {
