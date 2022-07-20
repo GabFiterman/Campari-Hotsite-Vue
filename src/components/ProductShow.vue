@@ -1,6 +1,11 @@
 <template>
+    <!-- Irá ser criado apenas se a variável 'products' já estiver preenchida -->
     <section v-if="products" class="ProductShow">
+    <!-- Inicia um loop de renderização baseado no array de products 
+    - escolhidos por quem chamou este componente -->
         <div v-for="(product, index) in products" :key="index">
+            <!-- Então inicia um ProductCard passando individualmente as informações
+            do produto -->
             <ProductCard 
                 :product-image="product.image" 
                 :product-name="product.name" 
@@ -16,6 +21,7 @@
 
 <script>
 import ProductCard from "./ProductCard.vue";
+
 export default {
     name: 'ProductShow',
     data() {
@@ -31,18 +37,19 @@ export default {
         tags: String
     },
     methods: {
+        // Requisita à API a listagem de produtos e associa a variável products
+        // os produtos já filtrados com base na tag que o invocador solicitou
         async getProducts() {
             const req = await fetch("http://localhost:3000/products");
             const dataProducts = await req.json();
-            this.products = dataProducts;
-            this.attachProducts();
+            this.products = this.filterProductByTag(this.tags, dataProducts);
         },
-        attachProducts() {
-            this.products = this.filterProductByTag(this.tags, this.products);
-        },
+        // O filtro dos produtos
         filterProductByTag(tag, products) {
             let filteredProducts = [];
 
+            // Decidi usar a estrutura switch por sua simplicidade de manutenção,
+            // e por ter sido a forma que encontrei de solução, acredito que seria ideal automatizar um pouco mais esta parte
             switch (tag) {
                 case 'highlight':
                     filteredProducts = products.filter((e) => {
@@ -59,14 +66,15 @@ export default {
                         return e.tags.offer == true
                     });
                 default:
-                    console.log('Não identificamos uma tag válida')
+                    console.log('Não identificamos uma tag válida');
             }
 
-            console.log(`----------------- Filtered ${tag} products -----------------`);
-            console.log(filteredProducts)
+            // console.log(`----------------- Filtered ${tag} products -----------------`);
+            // console.log(filteredProducts)
             return filteredProducts;
         }
     },
+    // Assim que a página for carregada, já capturar os produtos
     mounted() {
         this.getProducts();
     },

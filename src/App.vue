@@ -1,27 +1,29 @@
 <template>
-  <!-- <nav class="navBar">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/product-demo">Product Page</router-link>
-  </nav> -->
   <div>
-    <router-view :key="$route.path"/>
+    <!-- Inicia a router-view estabelecida em rotas -->
+    <router-view :key="$route.path" />
+
+    <!-- Renderiza tal componente em toda a aplicação -->
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <script>
-import Footer from './components/Footer.vue'
-export default{
+import Footer from './components/Footer.vue';
+
+export default {
   name: 'App',
-  components: {Footer}
+  components: { Footer }
 }
 </script>
 
 <style>
+/* As declarações e notações de escopo Global em CSS, devem entontrar-se e App mesmo,
+garantindo que tais declarações sejam globais */
 @import './assets/_reset.css';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+/* Variáveis utilizadas na aplicação */
 :root {
   --color-font-main: #2c3e50;
   --color-font-grey: #87888c;
@@ -48,36 +50,13 @@ export default{
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
-.active-link{
+.active-link {
   color: #041E42;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
-.navBar{
-  background-color: #041E42;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-}
-
-.navBar a{
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  margin: 0 4rem;
-  border-bottom: 2px solid aqua;
-  padding: 2rem 1rem;
-  transition: all 0.5s;
-}
-
-.navBar a:hover{
-  color: aqua;
-  border-bottom: 2px solid white;
-  background-color: rgba(255,255,255, 0.25);
-}
 
 h1 {
   font-size: 2rem;
@@ -101,13 +80,36 @@ button:hover {
   filter: brightness(1.5);
 }
 
+.navBar {
+  background-color: #041E42;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.navBar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin: 0 4rem;
+  border-bottom: 2px solid aqua;
+  padding: 2rem 1rem;
+  transition: all 0.5s;
+}
+
+.navBar a:hover {
+  color: aqua;
+  border-bottom: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
 .horizontal-divider {
-    border-top: var(--border-main);
-    width: 100%;
+  border-top: var(--border-main);
+  width: 100%;
 }
 
 .vertical-divider {
-    border-left: var(--border-main);
-    min-height: 3rem;
+  border-left: var(--border-main);
+  min-height: 3rem;
 }
 </style>

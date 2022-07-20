@@ -22,11 +22,16 @@ export default {
         carouselImgs: Array
     },
     methods: {
+        // A ideia é simples:
+            // passar as props para data() (tive alguns problemas ao usar diretamente as props)
         getAssets() {
             this.images = this.carouselImgs;
             this.imageActualRendered = this.images[this.imageId];
             this.imageTotalQuantity = this.images.length;
         },
+        // Então primeiro preciso saber qual o movimento, (trás ou frente) então já capturo na invocação do método
+            // Então, com um simples contador considerando a ID da imagem, com a ID do "espaço no carousel"
+            // O mínimo do contador é em 0 mesmo, com o máximo baseando-se na quantidade de imagens 
         changeImage(direction) {
             if (direction == 'next') {
                 this.imageId++;
@@ -47,6 +52,7 @@ export default {
             }
         }
     },
+    // Antes mesmo do componente ser carregado, já é necessário pré-carregar os assets
     beforeMount() {
         this.getAssets();
     }

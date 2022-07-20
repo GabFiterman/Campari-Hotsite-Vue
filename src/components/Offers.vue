@@ -1,6 +1,8 @@
 <template>
     <section class="Offers">
         <h1>Ofertas</h1>
+         <!-- Chama o container que irá montar os cards de produto, 
+        passando qual a categoria (baseada em 'tag') de produto irá ser mostrada -->
         <ProductShow :tags="tag" />
     </section>
 </template>

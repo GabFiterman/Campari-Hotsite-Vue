@@ -2,15 +2,19 @@
     <section class="Classics">
         <div class="classics__text">
             <h1>Para aproveitar um clássico: Negroni</h1>
-            <p>30ml de Campari | 30ml de Gin | 30ml de Vermute Doce | Coloque todos os ingredientes diretamente em copo
+            <p>30ml de Campari | 30ml de Gin | 30ml de Vermute Doce 
+                | Coloque todos os ingredientes diretamente em copo
                 baixo cheio de gelo. </p>
         </div>
+        <!-- Chama o container que irá montar os cards de produto, 
+        passando qual a categoria (baseada em 'tag') de produto irá ser mostrada -->
         <ProductShow :tags="tag" />
     </section>
 </template>
 
 <script>
 import ProductShow from './ProductShow.vue';
+
 export default {
     name: "Classics",
     data() {
