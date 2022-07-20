@@ -1,5 +1,5 @@
 <template>
-    <GoBack />
+    <GoBack class="ProductPage"/>
     <div v-if="product" class="ProductPage">
         <div class="ProductPage__Info">
             <img :src="product.image" alt="" />
@@ -40,17 +40,18 @@ export default {
 .ProductPage {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 10vw;
+    align-items: flex-start;
+    margin: 0 16vw;
 }
 
 .ProductPage__Info{
     padding: 2rem;
+    margin-right: 4rem;
     border: var(--border-main);
 }
 
 .ProductPage__Info img{
-    width: 20rem;
+    width: 15rem;
 }
 
 .ProductPage__Info h1{

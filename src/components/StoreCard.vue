@@ -38,8 +38,8 @@ export default {
 }
 
 .StoreCard img {
-  max-height: 3.5rem;
-  max-width: 6rem;
+  max-height: 3rem;
+  max-width: 4rem;
 }
 .StoreCard__info{
   display: flex;
@@ -48,17 +48,18 @@ export default {
 
 }
 .StoreCard__info h1{
-  font-size: 1.6rem;
+  font-size: 1.15rem;
+  font-weight: normal;
 }
 
 .StoreCard__info h2{
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   color: var(--color-font-main);
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .StoreCard button{
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 </style>

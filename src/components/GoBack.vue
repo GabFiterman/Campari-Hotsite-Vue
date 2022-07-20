@@ -25,7 +25,6 @@ export default {
     display: flex;
     align-items: center;
     margin: 4rem 6rem;
-    background-color: var(--color-brand-main);
     padding: 1rem 2rem;
     max-width: 8vw;
     border-radius: 0.5rem;
@@ -33,14 +32,12 @@ export default {
 }
 
 .GoBack:hover{
-    box-shadow: var(--shadow-box-main); 
-    filter: brightness(1.5);
+    box-shadow: var(--shadow-box-main);
 }
 
 .GoBack img {
     height: 1.5rem;
     margin-right: 2rem;
-    filter: invert();
     opacity: 0.5;
 }
 
