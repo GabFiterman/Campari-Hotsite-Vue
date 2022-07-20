@@ -12,13 +12,13 @@
             <p>{{ products.description }}</p>
         </div>
         <!-- Inicia o componente de exibição do vendedores do produto -->
-        <ProductPageStores />
+        <ProductPageSeller />
     </div>
 </template>
 
 <script>
 import GoBack from '../components/GoBack.vue';
-import ProductPageStores from '../components/ProductPageStores.vue';
+import ProductPageSeller from '../components/ProductPageSeller.vue';
 
 
 export default {
@@ -38,8 +38,6 @@ export default {
             const dataProducts = await req.json();
 
             this.products = this.filterProductById(this.id, dataProducts);
-            console.log('############ Products ############');
-            console.log(this.products);
         },
         filterProductById(id, dataProdutcs) {
             return dataProdutcs.find((product) => product.id === id);
@@ -47,7 +45,7 @@ export default {
     },
     components: {
         GoBack,
-        ProductPageStores
+        ProductPageSeller
     },
     beforeMount() {
         this.getProducts();

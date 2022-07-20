@@ -1,11 +1,11 @@
 <template>
-  <div class="StoreCard">
-    <img :src="logo" alt="Logo Empresa">
-    <div class="StoreCard__info">
-      <h1>Mercado Livre - Loja Campari</h1>
-      <h2>R$ 134,90</h2>
+  <div class="sellerCard">
+    <img :src="sellerLogo" :alt="`Logo ${sellerName}`">
+    <div class="sellerCard__info">
+      <h1>{{sellerName}}</h1>
+      <h2>{{sellerPrice}}</h2>
     </div>
-    <button>Comprar</button>
+    <button><a :href="sellerUrl">Comprar</a></button>
   </div>
 </template>
 
@@ -13,23 +13,24 @@
 import dataBase from '../../db/db.json';
 
 export default {
-  name: 'StoreCard',
+  name: 'SellerCard',
   data() {
     return {
       logo: dataBase.sellers[1].image 
     }
   },
   props: {
-    storeLogo: String,
-    storeName: String,
-    storePrice: String,
-    storeUrl: String
+    sellerLogo: String,
+    sellerName: String,
+    sellerPrice: String,
+    sellerUrl: String,
+    sellerLogo: String
   }
 }
 </script>
 
 <style scoped>
-.StoreCard {
+.sellerCard {
   border: var(--border-main);
   padding: 1.5rem;
   display: flex;
@@ -37,29 +38,29 @@ export default {
   align-items: center;
 }
 
-.StoreCard img {
+.sellerCard img {
   max-height: 3rem;
   max-width: 4rem;
 }
-.StoreCard__info{
+.sellerCard__info{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
 }
-.StoreCard__info h1{
+.sellerCard__info h1{
   font-size: 1.15rem;
   font-weight: normal;
 }
 
-.StoreCard__info h2{
+.sellerCard__info h2{
   font-size: 0.95rem;
   color: var(--color-font-main);
   font-weight: bold;
   margin-top: 0.5rem;
 }
 
-.StoreCard button{
+.sellerCard button{
   font-size: 1rem;
 }
 </style>
