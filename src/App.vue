@@ -59,25 +59,30 @@ garantindo que tais declarações sejam globais */
 
 
 h1 {
+  color: var(--color-font-main);
   font-size: 2rem;
   font-weight: bold;
-  color: var(--color-font-main);
 }
 
 button {
   background-color: var(--color-brand-main);
+  border-radius: 0.15rem;
+  border: none;
   color: var(--color-light-grey);
-  padding: 0.55rem 0.75rem;
   font-size: 0.95rem;
   font-weight: 550;
-  border: none;
-  border-radius: 0.15rem;
+  padding: 0.55rem 0.75rem;
   transition: all 0.5s;
 }
 
 button:hover {
   cursor: pointer;
   filter: brightness(1.5);
+}
+
+a{
+    color: var(--color-background);
+    text-decoration: none;
 }
 
 .navBar {
@@ -88,19 +93,19 @@ button:hover {
 }
 
 .navBar a {
-  text-decoration: none;
+  border-bottom: 2px solid aqua;
   color: white;
   font-weight: bold;
   margin: 0 4rem;
-  border-bottom: 2px solid aqua;
   padding: 2rem 1rem;
+  text-decoration: none;
   transition: all 0.5s;
 }
 
 .navBar a:hover {
-  color: aqua;
-  border-bottom: 2px solid white;
   background-color: rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid white;
+  color: aqua;
 }
 
 .horizontal-divider {

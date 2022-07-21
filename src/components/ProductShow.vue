@@ -1,9 +1,11 @@
 <template>
     <!-- Irá ser criado apenas se a variável 'products' já estiver preenchida -->
     <section v-if="products" class="ProductShow">
+
     <!-- Inicia um loop de renderização baseado no array de products 
     - escolhidos por quem chamou este componente -->
         <div v-for="(product, index) in products" :key="index">
+
             <!-- Então inicia um ProductCard passando individualmente as informações
             do produto -->
             <ProductCard 
@@ -68,9 +70,6 @@ export default {
                 default:
                     console.log('Não identificamos uma tag válida');
             }
-
-            // console.log(`----------------- Filtered ${tag} products -----------------`);
-            // console.log(filteredProducts)
             return filteredProducts;
         }
     },

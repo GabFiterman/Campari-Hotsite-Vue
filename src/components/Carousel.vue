@@ -1,6 +1,6 @@
 <template>
     <!-- TODO: add animation to slider -->
-    <div v-show="images" class="Carousel">
+    <div v-if="images" class="Carousel">
         <p @click="changeImage('previous')" class="Carousel__Controler Carousel__Controler-previous">&lt;</p>
         <img :src="imageActualRendered" />
         <p @click="changeImage('next')" class="Carousel__Controler Carousel__Controler-next">></p>

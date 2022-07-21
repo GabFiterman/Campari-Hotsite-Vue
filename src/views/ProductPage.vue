@@ -2,18 +2,21 @@
     <!-- Página que deve ser chamada pelo link do card dos produtos -->
 
     <!-- Link fixo para redirecionamento para a Home -->
-    <GoBack class="ProductPage" />
+    <GoBack />
 
     <!-- Garantir que será carregado corretamente, após a captura dos dados -->
     <div v-if="products" class="ProductPage">
+
         <div class="ProductPage__Info">
             <img :src="products.image" alt="" />
             <h1>{{ products.name }}</h1>
             <p>{{ products.description }}</p>
         </div>
+
         <div v-if="products">
             <ProductPageSeller :product="products" />
         </div>
+
     </div>
 </template>
 
@@ -61,6 +64,7 @@ export default {
     justify-content: space-between;
     align-items: flex-start;
     margin: 0 16vw;
+    padding-bottom: 12vh;
 }
 
 .ProductPage__Info {
@@ -71,6 +75,12 @@ export default {
 
 .ProductPage__Info img {
     width: 15rem;
+    transition: all 1s;
+}
+
+.ProductPage__Info img:hover{
+    cursor: pointer;
+    transform: scale(1.25);
 }
 
 .ProductPage__Info h1 {
@@ -81,6 +91,7 @@ export default {
 .ProductPage__Info p {
     margin-top: 2rem;
     width: 20vw;
-    text-align: justify;
+    text-align: center;
+    line-height: 1.5rem;
 }
 </style>

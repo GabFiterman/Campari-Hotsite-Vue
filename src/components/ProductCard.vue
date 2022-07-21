@@ -49,29 +49,30 @@ export default {
 
 <style scoped>
 .productCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     background-color: var(--color-background);
-    padding: 1vh 1.5vw;
-    height: 52vh;
-    width: 16vw;
     border: var(--border-main);
-    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    height: 52vh;
+    justify-content: flex-start;
     margin: 2vh 0;
+    padding-top: 5vh;
+    padding: 1vh 1.5vw;
+    transition: all 1s;
+    width: 16vw;
 }
 
 .productCard:hover {
-    cursor: pointer;
     box-shadow: var(--shadow-box-main);
+    cursor: pointer;
 }
 
 .productCard img {
     height: 32vh;
-    width: auto;
     margin-bottom: 1.6vh;
     transition: all 1s;
+    width: auto;
 }
 
 .productCard img:hover {
@@ -89,9 +90,9 @@ export default {
 }
 
 .productCard__info {
+    align-items: flex-end;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
 }
 
 .productCard__info-price span {
@@ -99,18 +100,14 @@ export default {
 }
 
 .productCard__info-price p {
+    color: var(--color-brand-main);
     font-size: 1.3rem;
     font-weight: bold;
     margin-right: 1vw;
-    color: var(--color-brand-main)
 }
 
 .productCard__info-button {
     margin-left: 1vw;
 }
 
-a{
-    color: var(--color-background);
-    text-decoration: none;
-}
 </style>
