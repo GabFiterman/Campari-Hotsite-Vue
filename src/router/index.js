@@ -3,20 +3,14 @@ import HomeView from '../views/HomeView.vue';
 import ProductDemo from '../views/ProductDemo.vue';
 
 const routes = [{
-        path: '/product-demo',
-        name: 'product-demo',
-        component: ProductDemo
-    },
-    {
         path: '/',
         name: 'home',
         component: HomeView
     },
     {
-        path: '/about',
-        name: 'about',
-        component: () =>
-            import ('../views/AboutView.vue')
+        path: '/product-demo',
+        name: 'product-demo',
+        component: ProductDemo
     },
     {
         path: '/ProductPage/:id/:slug',

@@ -11,8 +11,9 @@
             <h1>{{ products.name }}</h1>
             <p>{{ products.description }}</p>
         </div>
-        <!-- Inicia o componente de exibição do vendedores do produto -->
-        <ProductPageSeller />
+        <div v-if="products">
+            <ProductPageSeller :product="products" />
+        </div>
     </div>
 </template>
 
@@ -23,8 +24,8 @@ import ProductPageSeller from '../components/ProductPageSeller.vue';
 
 export default {
     name: "ProductPage",
-    data(){
-        return{
+    data() {
+        return {
             products: null
         }
     },
@@ -38,6 +39,7 @@ export default {
             const dataProducts = await req.json();
 
             this.products = this.filterProductById(this.id, dataProducts);
+            console.log(this.products);
         },
         filterProductById(id, dataProdutcs) {
             return dataProdutcs.find((product) => product.id === id);
