@@ -6,8 +6,8 @@
                 | Coloque todos os ingredientes diretamente em copo
                 baixo cheio de gelo. </p>
         </div>
-        <!-- Chama o container que irá montar os cards de produto, 
-        passando qual a categoria (baseada em 'tag') de produto irá ser mostrada -->
+        <!-- Call the container that will mount the product cards,
+         passing which category (based on 'tag') product will be shown -->
         <ProductShow :tags="tag" />
     </section>
 </template>

@@ -1,30 +1,28 @@
 <template>
     <div>
         <header>
-            <!-- O banner principal recebe sua imagem -->
+            <!-- The main banner receives your image -->
             <Hero :heroBanner="heroBanner" />
         </header>
 
-        <!-- <button @click="oTeste.alerta">{{oTeste.teste}}</button> -->
-
-        <!-- Aqui já inicio todas sections de uma vez -->
+        <!-- Here I start all sections at once -->
         <main>
-            <!-- Intro -> Seção destinada à introdução do conteúdo, recebe um vídeo -->
+            <!-- Intro -> Section intended for the introduction of content, receives a video -->
             <Intro class="section" :introVideo="introVideo" />
-            
-            <!-- Tips -> Seção que recebe uma couriosidade e invoca um carousel, que já deve receber as imagens -->
+
+            <!-- Tips -> Section that receives a curiosity and invokes a carousel, which should already receive the images -->
             <Tips class="section" :carouselImgs="carouselImgs" />
-            
-            <!-- Classics -> Seção que exibe os produtos com a tag 'classics' -->
+
+            <!-- Classics -> Section that displays products tagged 'classics' -->
             <Classics class="section" />
-            
-            <!-- Offers -> Seção que exibe os produtos com a tag 'Offers' -->
+
+            <!-- Offers -> Section that displays products tagged 'Offers' -->
             <Offers class="section" />
-            
-            <!-- Seção que exibe um pequeno conteúdo sobre a empresa, deve receber a imagem -->
+
+            <!-- Section that displays a small content about the company, must receive the image -->
             <KnowUs class="section" :image="knowUsImage" />
         </main>
-        <!-- Footer -> Por ser global, em App.vue -->
+        <!-- Footer -> Because it is global, in App.vue -->
     </div>
 </template>
 
@@ -35,8 +33,6 @@ import Tips from '../components/Tips.vue'
 import Classics from '../components/Classics.vue';
 import Offers from '../components/Offers.vue';
 import KnowUs from '../components/KnowUs.vue';
-// import Test from '../assets/test.js';
-// import ApiConsume from '../components/ApiConsume.js';
 
 export default {
     name: "HomeView",
@@ -47,11 +43,10 @@ export default {
             introVideo: null,
             knowUsImage: null,
             carouselImgs: null,
-            // oTeste: Test
         };
     },
     methods: {
-        // Buscando os assets do servidor e atribuindo-os às variáveis em data().
+        // Fetching server assets and assigning them to variables in data().
         async getAssets() {
             const req = await fetch("http://localhost:3000/assets");
             const dataAssets = await req.json();
@@ -61,21 +56,18 @@ export default {
             this.knowUsImage = this.findAssetByName("Know Us", dataAssets);
             this.carouselImgs = this.findAssetByName("Carousel", dataAssets);
         },
-        // Filtro para os assets, recebe a base de dados, (vinda da api) e o name do asset
-        // necessário, tendo como retorno o acesso à este asset.
+        // Filter for the assets, receive the database, (from the api) and the name of the asset
+        // necessary, returning access to this asset.
         findAssetByName(assetName, dataAssets) {
             let asset = dataAssets.filter((e) => {
                 return e.name == assetName;
             });
-            // console.log(`---------------------- Asset ${assetName} ----------------------`);
-            // console.log(asset[0].url)
+            // This is because the method returns an array, and as unique names are used, 
+            // I return the first position [0]
             return asset[0].url;
         },
-        // oTeste(){
-        //     return this.Teste;
-        // }
     },
-    // Antes mesmo da página ser carregada, já é necessário pré-carregar os assets
+    // Even before the page is loaded, it is already necessary to preload the assets
     beforeMount() {
         this.getAssets();
     },

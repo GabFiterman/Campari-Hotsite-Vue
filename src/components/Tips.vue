@@ -1,7 +1,7 @@
 <template>
     <section class="Tips">
         <h1>Para acompanhar seu drink</h1>
-        <!-- Achei interessante a ideia de construir o carousel "na unha" -->
+        <!-- I found the idea of building the carousel "with your own hands" interesting -->
         <Carousel :carouselImgs="carouselImgs" />
     </section>
 </template>

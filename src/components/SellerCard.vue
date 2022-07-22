@@ -10,15 +10,9 @@
 </template>
 
 <script>
-import dataBase from '../../db/db.json';
 
 export default {
   name: 'SellerCard',
-  data() {
-    return {
-      logo: dataBase.sellers[1].image
-    }
-  },
   props: {
     sellerLogo: String,
     sellerName: String,

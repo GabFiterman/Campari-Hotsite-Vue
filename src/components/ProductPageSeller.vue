@@ -6,18 +6,15 @@
             <p>Aparecida de Goiânia - Goiás</p>
         </div>
         <br />
-        <!-- <div v-for="product in products" :key="product.id"> -->
-        <!-- <h1>Você pode comprar em: </h1> -->
         <div v-for="seller in product.sellers" :key="seller.id">
             <SellerCard :seller-logo="seller.image" :seller-name="seller.name" :seller-price="seller.price"
                 :seller-url="seller.url" class="SellerCard" />
         </div>
-        <!-- </div> -->
     </section>
 </template>
 
 <script>
-import SellerCard from './SellerCard.vue';
+import SellerCard from './SellerCard .vue';
 
 export default {
     name: "ProductPageSeller",

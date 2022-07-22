@@ -1,10 +1,10 @@
 <template>
-    <!-- Página que deve ser chamada pelo link do card dos produtos -->
+    <!-- Page that should be called by the product card link -->
 
-    <!-- Link fixo para redirecionamento para a Home -->
+    <!-- Fixed link to redirect to Home -->
     <GoBack />
 
-    <!-- Garantir que será carregado corretamente, após a captura dos dados -->
+    <!-- Ensuring that it will load correctly after capturing the data -->
     <div v-if="products" class="ProductPage">
 
         <div class="ProductPage__Info">
@@ -33,7 +33,7 @@ export default {
         }
     },
     props: {
-        // propriedade obrigatória para receber o id do produto em questão
+        // mandatory property to receive the id of the product in question
         id: { type: Number, required: true }
     },
     methods: {
@@ -42,7 +42,6 @@ export default {
             const dataProducts = await req.json();
 
             this.products = this.filterProductById(this.id, dataProducts);
-            console.log(this.products);
         },
         filterProductById(id, dataProdutcs) {
             return dataProdutcs.find((product) => product.id === id);

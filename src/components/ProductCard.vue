@@ -13,7 +13,7 @@
             </div>
             <div class="vertical-divider"></div>
             <button class="productCard__info-button">
-                <!-- Aqui é chamada a estrutura de roteamento, montando uma página de produto, com base em seu id -->
+                <!-- Here is called the routing structure, assembling a product page, based on its id -->
             <router-link
                 :to="{
                     name: 'ProductPage',

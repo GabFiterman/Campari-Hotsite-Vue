@@ -1,13 +1,13 @@
 <template>
-    <!-- Irá ser criado apenas se a variável 'products' já estiver preenchida -->
+    <!-- It will only be created if the 'products' variable is already filled -->
     <section v-if="products" class="ProductShow">
 
-    <!-- Inicia um loop de renderização baseado no array de products 
-    - escolhidos por quem chamou este componente -->
+        <!-- Starts a rendering loop based on the products array
+     - chosen by anyone called this component -->
         <div v-for="(product, index) in products" :key="index">
 
-            <!-- Então inicia um ProductCard passando individualmente as informações
-            do produto -->
+            <!-- Then start a ProductCard passing the information individually
+             of product -->
             <ProductCard 
                 :product-image="product.image" 
                 :product-name="product.name" 
@@ -15,7 +15,7 @@
                 :product-last-name="product.lastName" 
                 :product-price="product.price" 
                 :product-id="product.id"
-                :product-slug="product.slug"
+                :product-slug="product.slug" 
             />
         </div>
     </section>
@@ -35,23 +35,24 @@ export default {
         }
     },
     props: {
-        productsList: Array,
         tags: String
     },
     methods: {
-        // Requisita à API a listagem de produtos e associa a variável products
-        // os produtos já filtrados com base na tag que o invocador solicitou
+
+        // Request the API to list the products and associate the products variable
+        // the products already filtered based on the tag the invoker requested
         async getProducts() {
             const req = await fetch("http://localhost:3000/products");
             const dataProducts = await req.json();
             this.products = this.filterProductByTag(this.tags, dataProducts);
         },
-        // O filtro dos produtos
+
+        // The product filter
         filterProductByTag(tag, products) {
             let filteredProducts = [];
 
-            // Decidi usar a estrutura switch por sua simplicidade de manutenção,
-            // e por ter sido a forma que encontrei de solução, acredito que seria ideal automatizar um pouco mais esta parte
+            // I decided to use the switch framework for its maintenance simplicity,
+            // and because it was the solution I found, I believe it would be ideal to automate this part a little more
             switch (tag) {
                 case 'highlight':
                     filteredProducts = products.filter((e) => {
@@ -68,12 +69,13 @@ export default {
                         return e.tags.offer == true
                     });
                 default:
-                    console.log('Não identificamos uma tag válida');
+                    
             }
             return filteredProducts;
         }
     },
-    // Assim que a página for carregada, já capturar os produtos
+
+    // As soon as the page is loaded, already capture the products
     mounted() {
         this.getProducts();
     },
