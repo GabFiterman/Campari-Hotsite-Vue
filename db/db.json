@@ -287,5 +287,64 @@
             "type": "image",
             "url": "https://i.imgur.com/la3Fhlj.jpg"
         }
+    ],
+    "sections": [{
+            "id": 0,
+            "sectionName": "Hero",
+            "title": "",
+            "description": "",
+            "assets": [
+                "https://i.imgur.com/Zl713AI.jpg"
+            ],
+            "productTag": ""
+        },
+        {
+            "id": 1,
+            "sectionName": "Intro",
+            "title": "Duas metades se completam",
+            "description": "Para curtir com os amigos e com a família, Aperol Spritz é perfeito para momentos leves e descomplicados.",
+            "assets": [
+                "https://www.youtube.com/embed/Kz6WnrHOuv0"
+            ],
+            "productTag": "highlight"
+        },
+        {
+            "id": 2,
+            "sectionName": "Tips",
+            "title": "Para acompanhar seu drink",
+            "description": "",
+            "assets": [
+                "https://i.imgur.com/ABRTsXd.jpg",
+                "https://i.imgur.com/1MrGGhC.jpg"
+
+            ],
+            "productTag": ""
+        },
+        {
+            "id": 3,
+            "sectionName": "Classics",
+            "title": "Para aproveitar um clássico: Negroni",
+            "description": "30ml de Campari | 30ml de Gin | 30ml de Vermute Doce | Coloque todos os ingredientes diretamente em copo baixo cheio de gelo. ",
+            "assets": [],
+            "productTag": "classic"
+        },
+        {
+            "id": 4,
+            "sectionName": "Offers",
+            "title": "Ofertas",
+            "description": "",
+            "assets": [],
+            "productTag": "offers"
+        },
+        {
+            "id": 5,
+            "sectionName": "KnowUs",
+            "title": "Descubra a Campari",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisi tortor, luctus eu consectetur at, molestie vitae nulla.",
+            "assets": [
+                "https://i.imgur.com/la3Fhlj.jpg"
+            ],
+            "productTag": ""
+        }
     ]
 }
