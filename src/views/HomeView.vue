@@ -2,25 +2,42 @@
     <div>
         <header>
             <!-- The main banner receives your image -->
-            <Hero :heroBanner="heroBanner" />
+            <Hero 
+                :propsSection="dataHero" 
+            />
         </header>
 
         <!-- Here I start all sections at once -->
-        <main>
+        <main v-if="dataProducts && dataOffers">
+
             <!-- Intro -> Section intended for the introduction of content, receives a video -->
-            <Intro class="section" :introVideo="introVideo" />
+            <Intro class="section" 
+                :propsProducts="dataProducts"
+                :propsSection="dataIntro"
+            />
 
             <!-- Tips -> Section that receives a curiosity and invokes a carousel, which should already receive the images -->
-            <Tips class="section" :carouselImgs="carouselImgs" />
+            <Tips class="section" 
+                :carouselImgs="carouselImgs" 
+                :propsSection="dataTips"
+            />
 
             <!-- Classics -> Section that displays products tagged 'classics' -->
-            <Classics class="section" />
+            <Classics class="section" 
+                :propsProducts="dataProducts"
+                :propsSection="dataClassics"
+            />
 
             <!-- Offers -> Section that displays products tagged 'Offers' -->
-            <Offers class="section" />
+            <Offers class="section" 
+                :propsProducts="dataProducts"
+                :propsSection="dataOffers"
+            />
 
             <!-- Section that displays a small content about the company, must receive the image -->
-            <KnowUs class="section" :image="knowUsImage" />
+            <KnowUs class="section" 
+                :propsSection="dataKnowUs"
+            />
         </main>
         <!-- Footer -> Because it is global, in App.vue -->
     </div>
@@ -38,38 +55,60 @@ export default {
     name: "HomeView",
     data() {
         return {
-            productsList: null,
-            heroBanner: null,
-            introVideo: null,
-            knowUsImage: null,
-            carouselImgs: null,
+            dataHero: null,
+            dataProducts: null,
+            dataIntro: null,
+            dataTips: null,
+            dataClassics: null,
+            dataOffers: null,
+            dataKnowUs: null,
         };
     },
     methods: {
-        // Fetching server assets and assigning them to variables in data().
-        async getAssets() {
-            const req = await fetch("http://localhost:3000/assets");
-            const dataAssets = await req.json();
 
-            this.heroBanner = this.findAssetByName("Hero Banner", dataAssets);
-            this.introVideo = this.findAssetByName("Content Video", dataAssets);
-            this.knowUsImage = this.findAssetByName("Know Us", dataAssets);
-            this.carouselImgs = this.findAssetByName("Carousel", dataAssets);
+        // Fetching server assets and assigning them to variables in data().
+        async getProducts() {
+            const req = await fetch("http://localhost:3000/products");
+            const data = await req.json();
+
+            this.dataProducts = data;
         },
-        // Filter for the assets, receive the database, (from the api) and the name of the asset
-        // necessary, returning access to this asset.
-        findAssetByName(assetName, dataAssets) {
-            let asset = dataAssets.filter((e) => {
-                return e.name == assetName;
-            });
-            // This is because the method returns an array, and as unique names are used, 
-            // I return the first position [0]
-            return asset[0].url;
+
+        
+        // Fetching server assets and assigning them to variables in data().
+        async getSections() {
+            const req = await fetch("http://localhost:3000/sections");
+            const data = await req.json();
+
+            this.dataHero = findSectionByName("Hero", data);
+            this.dataIntro = findSectionByName("Intro", data);
+            this.dataTips = findSectionByName("Tips", data);
+            this.dataClassics = findSectionByName("Classics", data);
+            this.dataOffers = findSectionByName("Offers", data);
+            this.dataKnowUs = findSectionByName("KnowUs", data);
+
+            // Filter for the assets, receive the database, (from the api) and the name of the
+            // section is necessary, returning access to this asset.
+            function findSectionByName(sectionName, dataSection) {
+                let section = dataSection.filter((e) => {
+                    return e.sectionName == sectionName;
+                })
+                // This is because the method returns an array, and as unique names are used, 
+                // I return the first position [0]
+                return section[0];
+            }
+
         },
+        
+        // Just call all types of requests
+        apiRequests() {
+            this.getSections();
+            this.getProducts();
+        }
     },
     // Even before the page is loaded, it is already necessary to preload the assets
     beforeMount() {
-        this.getAssets();
+        this.apiRequests();
     },
     components: {
         Hero,

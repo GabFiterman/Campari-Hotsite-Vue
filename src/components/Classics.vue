@@ -1,14 +1,15 @@
 <template>
-    <section class="Classics">
+    <section class="Classics" v-if="this.propsSection && this.propsProducts">
         <div class="classics__text">
-            <h1>Para aproveitar um clássico: Negroni</h1>
-            <p>30ml de Campari | 30ml de Gin | 30ml de Vermute Doce 
-                | Coloque todos os ingredientes diretamente em copo
-                baixo cheio de gelo. </p>
+            <h1>{{propsSection.title}}</h1>
+            <p>{{propsSection.description}}</p>
         </div>
         <!-- Call the container that will mount the product cards,
-         passing which category (based on 'tag') product will be shown -->
-        <ProductShow :tags="tag" />
+         passing which category (based on 'tag') product will be shown -->  
+        <ProductShow 
+            :propsProducts="propsProducts"
+            :tags="this.propsSection.productTag"
+        />
     </section>
 </template>
 
@@ -17,10 +18,9 @@ import ProductShow from './ProductShow.vue';
 
 export default {
     name: "Classics",
-    data() {
-        return {
-            tag: 'classic'
-        };
+    props:{
+        propsProducts: Array,
+        propsSection: Array
     },
     components: { ProductShow }
 }

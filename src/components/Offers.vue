@@ -1,9 +1,9 @@
 <template>
-    <section class="Offers">
-        <h1>Ofertas</h1>
+    <section class="Offers" v-if="this.propsProducts && this.propsSection">
+        <h1>{{propsSection.title}}</h1>
          <!-- Call the container that will mount the product cards,
          passing which category (based on 'tag') product will be shown -->
-        <ProductShow :tags="tag" />
+        <ProductShow :tags="propsSection.productTag" :propsProducts="propsProducts"/>
     </section>
 </template>
 
@@ -12,10 +12,9 @@ import ProductShow from './ProductShow.vue';
 
 export default {
     name: "Offers",
-    data() {
-        return {
-            tag: 'offer'
-        }
+    props: {
+        propsProducts: Array,
+        propsSection: Array
     },
     components: { ProductShow }
 }

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import SellerCard from './SellerCard .vue';
+import SellerCard from './SellerCard.vue';
 
 export default {
     name: "ProductPageSeller",

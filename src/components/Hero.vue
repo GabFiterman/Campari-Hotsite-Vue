@@ -1,12 +1,12 @@
 <template>
-    <img :src="heroBanner" alt="Hero banner" class="heroBanner" />
+    <img :src="propsSection.assets[0]" alt="Hero banner" class="heroBanner" />
 </template>
 
 <script>
 export default{
     name: 'Hero',
     props: {
-        heroBanner: String
+        propsSection: String
     }
 }
 </script>

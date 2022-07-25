@@ -35,6 +35,7 @@ export default {
         }
     },
     props: {
+        propsProducts: Array,
         tags: String
     },
     methods: {
@@ -42,11 +43,9 @@ export default {
         // Request the API to list the products and associate the products variable
         // the products already filtered based on the tag the invoker requested
         async getProducts() {
-            const req = await fetch("http://localhost:3000/products");
-            const dataProducts = await req.json();
-            this.products = this.filterProductByTag(this.tags, dataProducts);
+            this.products = this.filterProductByTag(this.tags, this.propsProducts);
         },
-
+        
         // The product filter
         filterProductByTag(tag, products) {
             let filteredProducts = [];
@@ -76,7 +75,7 @@ export default {
     },
 
     // As soon as the page is loaded, already capture the products
-    mounted() {
+    beforeMount() {
         this.getProducts();
     },
     components: {

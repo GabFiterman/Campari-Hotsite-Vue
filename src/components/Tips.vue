@@ -1,8 +1,9 @@
 <template>
-    <section class="Tips">
-        <h1>Para acompanhar seu drink</h1>
+    <section class="Tips" v-if="this.propsSection">
+        <h1>{{propsSection.title}}</h1>
+
         <!-- I found the idea of building the carousel "with your own hands" interesting -->
-        <Carousel :carouselImgs="carouselImgs" />
+        <Carousel :carouselImgs="propsSection.assets" />
     </section>
 </template>
 
@@ -12,7 +13,7 @@ import Carousel from './Carousel.vue';
 export default {
     name: "Tips",
     props: {
-        carouselImgs: Array
+        propsSection: Array
     },
     components: { Carousel }
 }

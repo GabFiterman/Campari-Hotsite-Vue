@@ -1,19 +1,23 @@
 <template>
-    <section class="Intro">
-        <h1>Duas metades se completam</h1>
-        <p class="descriptionText">Para curtir com os amigos e com a família, Aperol Spritz é perfeito para momentos leves e descomplicados.</p>
+    <section class="Intro" v-if="this.propsProducts && this.propsSection">
+        <h1>{{this.propsSection.title}}</h1>
+        <p class="descriptionText">{{this.propsSection.description}}</p>
         
         <div class="intro__content">
             <iframe 
                 class="intro__video"
-                :src="videoURL" 
+                :src="this.propsSection.assets[0]" 
                 title="YouTube video player" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
             
-            <ProductShow :tags="tag" />
+            <ProductShow 
+                :tags="propsSection.productTag" 
+                :propsProducts="propsProducts" 
+            />
+            
         </div>
     </section>
 </template>
@@ -23,14 +27,9 @@ import ProductShow from './ProductShow.vue';
 
 export default{
     name: 'Intro',
-    data(){
-        return{
-            videoURL: 'https://www.youtube.com/embed/Kz6WnrHOuv0',
-            tag: 'highlight'
-        }
-    },
     props: {
-        introVideo: String
+        propsProducts: Array,
+        propsSection: Array,
     },
     components:{
         ProductShow
