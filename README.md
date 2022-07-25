@@ -1,29 +1,45 @@
-# 2buy
+# 2Buy with Vue
+![Status: Finished](https://img.shields.io/badge/status-finished-green) ![Node: v16.15.1](https://img.shields.io/badge/node-v16.15.1-important) ![Language: JavaScript](https://img.shields.io/badge/language-JavaScript-yellow) ![Framework: Vue js](https://img.shields.io/badge/framework-Vue.js-red) ![First Realese: 06/25/2022](https://img.shields.io/badge/first_release-06/25/2022-informational) 
 
-This template should help get you started developing with Vue 3 in Vite.
+## Introduction
 
-## Recommended IDE Setup
+### ⏩ Quick Description
+Project with Vue exploring the tool, with the maximum consumption of the API, concept of routes and the most efficient in componentization.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### 📃 A little context
 
-## Customize configuration
+2Buy with Vue is **originally** a traffic-driving tool for big brands looking to drive digital performance.
+**The project in question**, this is my first challenge, as an intern at Lett, where it was necessary to replicate the existing project, using Vue. It is important to note that this was my first project using this technology.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## A aplicação
 
-## Project Setup
+Application main screen 
+![Gif Showing the Home Screen](./public/Mostrando_Tela_Inicial.gif)
 
-```sh
-npm install
-```
+Use of internal and external routes 
+![Gif Shown the Routes](./public/Mostrando_Rotas.gif)
 
-### Compile and Hot-Reload for Development
+### 🛠 Technologies Used
+The following tools were used in building the project.
+- [Node.js](https://nodejs.org/)
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [json-Server](https://www.npmjs.com/package/json-server)
+- [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript/)
 
-```sh
-npm run dev
-```
+### 📦 Downloading and Using the Application
+Initially, it is important to establish that the project is private, as it may expose the security of LETT Digital.
 
-### Compile and Minify for Production
+Make sure you have Node.js installed - tested with v16.15.1
 
-```sh
-npm run build
-```
+So to use the project, the first thing to do is clone it!
+**`gh repo clone GabFiterman/2buy-Campari-Vue`**
+
+In the project folder, it is important at this point to install its dependencies, which basically is the vue route scheme, the vite for deployment and visualization in development and the json-server, which will simulate the database.
+**`npm install`**
+
+With the dependencies installed you should already be able to access it, first it is essential to **start the data server** with
+**`npm run database`**
+
+So finally **start the dev Vite project**
+**`npm run dev`**
